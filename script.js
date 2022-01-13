@@ -25,10 +25,10 @@ function eventListeners(){
     });
 
     // add to cart
-    nikeList.addEventListener('click', purchasenike);
+    nikeList.addEventListener('click', purchaseNike);
 
     // delete from cart
-    cartList.addEventListener('click', deletenike);
+    cartList.addEventListener('click', deleteNike);
 }
 
 // update cart info
@@ -65,22 +65,22 @@ function loadJSON(){
         nikeList.innerHTML = html;
     })
     .catch(error => {
-        alert(`User live server or local server`);
-        //URL scheme must be "http" or "https" for CORS request. You need to be serving your index.html locally or have your site hosted on a live server somewhere for the Fetch API to work properly.
+        alert(`A probleml with loading`);
+
     })
 }
 
 
 // purchase nike
-function purchasenike(e){
+function purchaseNike(e){
     if(e.target.classList.contains('add-to-cart-btn')){
         let nike = e.target.parentElement.parentElement;
-        getnikeInfo(nike);
+        getNikeInfo(nike);
     }
 }
 
 // get nike info after add to cart button click
-function getnikeInfo(nike){
+function getNikeInfo(nike){
     let nikeInfo = {
         id: cartItemID,
         pic: nike.querySelector('.nike-img img').src,
@@ -90,7 +90,7 @@ function getnikeInfo(nike){
     }
     cartItemID++;
     addToCartList(nikeInfo);
-    savenikeInStorage(nikeInfo);
+    saveNikeInStorage(nikeInfo);
 }
 
 // add the selected nike to the cart list
@@ -114,22 +114,22 @@ function addToCartList(nike){
 }
 
 // save the nike in the local storage
-function savenikeInStorage(item){
-    let nikes = getnikeFromStorage();
+function saveNikeInStorage(item){
+    let nikes = getNikeFromStorage();
     nikes.push(item);
     localStorage.setItem('nikes', JSON.stringify(nikes));
     updateCartInfo();
 }
 
 // get all the nikes info if there is any in the local storage
-function getnikeFromStorage(){
+function getNikeFromStorage(){
     return localStorage.getItem('nikes') ? JSON.parse(localStorage.getItem('nikes')) : [];
     // returns empty array if there isn't any nike info
 }
 
 // load carts nike
 function loadCart(){
-    let nikes = getnikeFromStorage();
+    let nikes = getNikeFromStorage();
     if(nikes.length < 1){
         cartItemID = 1; // if there is no any nike in the local storage
     } else {
@@ -145,7 +145,7 @@ function loadCart(){
 
 // calculate total price of the cart and other info
 function findCartInfo(){
-    let nikes = getnikeFromStorage();
+    let nikes = getNikeFromStorage();
     let total = nikes.reduce((acc, nike) => {
         let price = parseFloat(nike.price.substr(1)); // removing dollar sign
         return acc += price;
@@ -158,7 +158,7 @@ function findCartInfo(){
 }
 
 // delete nike from cart list and local storage
-function deletenike(e){
+function deleteNike(e){
     let cartItem;
     if(e.target.tagName === "BUTTON"){
         cartItem = e.target.parentElement;
@@ -168,7 +168,7 @@ function deletenike(e){
         cartItem.remove(); // this removes from the DOM only
     }
 
-    let nikes = getnikeFromStorage();
+    let nikes = getNikeFromStorage();
     let updatednikes = nikes.filter(nike => {
         return nike.id !== parseInt(cartItem.dataset.id);
     });
