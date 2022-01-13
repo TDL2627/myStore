@@ -1,122 +1,75 @@
 [
     {
-        "name" : "Armchair",
-        "category" : "Chair",
-        "price" : "50.25",
-        "imgSrc" : "images/armchair.png"
+        "name" : "Force 1",
+        "category" : "Shoes",
+        "price" : 1500,
+        "pic" : "images/air-force1.jpg"
     },
     {
-        "name" : "Bed",
-        "category" : "Bed",
-        "price" : "102.00",
-        "imgSrc" : "images/bed.png"
+        "name" : "Dior",
+        "category" : "Shoes",
+        "price" : 32549.99,
+        "pic" : "images/air-dior.jpg"
     },
     {
-        "name" : "Bench",
-        "category" : "Bench",
-        "price" : "15.00",
-        "imgSrc" : "images/bench.png"
+        "name" : "Max Slippers",
+        "category" : "Slippers",
+        "price" : 600,
+        "pic" : "images/air-slippers.jpg"
     },
     {
-        "name" : "Bunk bed",
-        "category" : "Bed",
-        "price" : "23.75",
-        "imgSrc" : "images/bunk-bed.png"
+        "name" : "Jordan",
+        "category" : "Shoes",
+        "price" : 1699.99,
+        "pic" : "images/air-jordan.jpg"
     },
     {
-        "name" : "Cabinet",
-        "category" : "Cabinet",
-        "price" : "50.00",
-        "imgSrc" : "images/cabinet.png"
+        "name" : "Classic",
+        "category" : "Sweater",
+        "price" : 200,
+        "pic" : "images/air-classic.jpg"
     },
     {
-        "name" : "Card table",
-        "category" : "Table",
-        "price" : "200.50",
-        "imgSrc" : "images/card-table.png"
+        "name" : "Bomber",
+        "category" : "Jacket",
+        "price" : 2000,
+        "pic" : "images/air-bomb.jpg"
     },
     {
-        "name" : "Cushion",
-        "category" : "Cushion",
-        "price" : "5.50",
-        "imgSrc" : "images/cushion.png"
+        "name" : "Huarrache",
+        "category" : "Shoes",
+        "price" : 1200,
+        "pic" : "images/air-huarache.jpg"
     },
     {
-        "name" : "Desk",
-        "category" : "Desk",
-        "price" : "25.00",
-        "imgSrc" : "images/desk.png"
+        "name" : "Mag",
+        "category" : "Shoes",
+        "price" : 500000,
+        "pic" : "images/air-mag.jpg"
     },
     {
-        "name" : "Drawer",
-        "category" : "Drawer",
-        "price" : "49.00",
-        "imgSrc" : "images/drawer.png"
+        "name" : "Max",
+        "category" : "Shoes",
+        "price" : 1299.99,
+        "pic" : "images/air-max.jpg"
     },
     {
-        "name" : "Office chair",
-        "category" : "Chair",
-        "price" : "60.99",
-        "imgSrc" : "images/office-chair.png"
+        "name" : "Money",
+        "category" : "Shoes",
+        "price" : 2500,
+        "pic" : "images/air-money.jpg"
+    },
+   
+    {
+        "name" : "Vapour",
+        "category" : "Shoes",
+        "price" : 1900,
+        "pic" : "images/air-vapour.jpg"
     },
     {
-        "name" : "Scissors chair",
-        "category" : "Chair",
-        "price" : "69.20",
-        "imgSrc" : "images/scissors-chair.png"
-    },
-    {
-        "name" : "Sleeper sofa",
-        "category" : "Sofa",
-        "price" : "224.99",
-        "imgSrc" : "images/sleeper-sofa.png"
-    },
-    {
-        "name" : "Sleigh bed",
-        "category" : "Bed",
-        "price" : "90.25",
-        "imgSrc" : "images/sleigh-bed.png"
-    },
-    {
-        "name" : "Sofa bed",
-        "category" : "Bed",
-        "price" : "99.99",
-        "imgSrc" : "images/sofa-bed.png"
-    },
-    {
-        "name" : "White armchair",
-        "category" : "Chair",
-        "price" : "75.80",
-        "imgSrc" : "images/white-armchair.png"
-    },
-    {
-        "name" : "White sofa",
-        "category" : "Sofa",
-        "price" : "159.00",
-        "imgSrc" : "images/white-sofa.png"
-    },
-    {
-        "name" : "Wing chair",
-        "category" : "Chair",
-        "price" : "100.50",
-        "imgSrc" : "images/wing-chair.png"
-    },
-    {
-        "name" : "Wooden armchair",
-        "category" : "Chair",
-        "price" : "187.45",
-        "imgSrc" : "images/wooden-armchair.png"
-    },
-    {
-        "name" : "Wooden dining table",
-        "category" : "Table",
-        "price" : "322.50",
-        "imgSrc" : "images/wooden-dining-table.png"
-    },
-    {
-        "name" : "Wooden table",
-        "category" : "Table",
-        "price" : "288.99",
-        "imgSrc" : "images/wooden-table.png"
+        "name" : "Wind",
+        "category" : "Jacket",
+        "price" : 1400,
+        "pic" : "images/air-wind.jpg"
     }
 ]

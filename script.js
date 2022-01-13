@@ -49,7 +49,7 @@ function loadJSON(){
             html += `
                 <div class = "product-item">
                     <div class = "product-img">
-                        <img src = "${product.imgSrc}" alt = "product image">
+                        <img src = "${product.pic}" alt = "product image">
                         <button type = "button" class = "add-to-cart-btn">
                             <i class = "fas fa-shopping-cart"></i>Add To Cart
                         </button>
@@ -84,7 +84,7 @@ function purchaseProduct(e){
 function getProductInfo(product){
     let productInfo = {
         id: cartItemID,
-        imgSrc: product.querySelector('.product-img img').src,
+        pic: product.querySelector('.product-img img').src,
         name: product.querySelector('.product-name').textContent,
         category: product.querySelector('.product-category').textContent,
         price: product.querySelector('.product-price').textContent
@@ -100,7 +100,7 @@ function addToCartList(product){
     cartItem.classList.add('cart-item');
     cartItem.setAttribute('data-id', `${product.id}`);
     cartItem.innerHTML = `
-        <img src = "${product.imgSrc}" alt = "product image">
+        <img src = "${product.pic}" alt = "product image">
         <div class = "cart-item-info">
             <h3 class = "cart-item-name">${product.name}</h3>
             <span class = "cart-item-category">${product.category}</span>
