@@ -19,7 +19,12 @@
       <button type = "button" class = "navbar-toggler">
       
       </button>
-   
+      <form action="javascript:void(0);" onsubmit="searchbar()"> 
+        <div>Search for a nike:</div>
+        <input type="text" id="search" placeholder="Search..." required>
+        <input type="submit" value="Search">
+        <input type="submit" value="Reset" onclick="location.reload()">
+      </form>
 
       <div class = "cart">
         <button type = "button" id = "cart-btn">
@@ -28,14 +33,15 @@
         </button>
         
         <div class = "cart-container">
+            <div class = "cart-total">
+                <h3>Total: R</h3>
+                <span id = "cart-total-value"></span>
+              </div>
           <div class = "cart-list">
            
           </div>
 
-          <div class = "cart-total">
-            <h3>Total: R</h3>
-            <span id = "cart-total-value"></span>
-          </div>
+         
         </div>
       </div>
     </nav>

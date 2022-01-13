@@ -107,7 +107,7 @@ function addToCartList(nike){
         </div>
 
         <button type = "button" class = "cart-item-del-btn">
-            <i class = "fas fa-times"></i>
+          delete
         </button>
     `;
     cartList.appendChild(cartItem);
@@ -175,3 +175,28 @@ function deleteNike(e){
     localStorage.setItem('nikes', JSON.stringify(updatednikes)); // updating the nike list after the deletion
     updateCartInfo();
 }
+// search
+// Search: nike Search
+searchbar = () => {
+    var searchednike = document.getElementById('search').value.trim();
+    nike.then(allshoes => {
+      if (!searchednike) {
+        throw new Error('Nothing was entered in the search bar');
+      }
+      // Filter all the shoes in the array with value typed into the input field
+      let shoesFound = allshoes.filter(nike => nike.name.toLowerCase().includes(searchednike.toLowerCase()));
+      if(shoesFound.length === 0) {
+        throw new Error('No shoes were found');
+      }
+      var data = '';
+      for (i = 0; i < shoesFound.length; i++) {
+    
+        data += '<h1>' + shoesFound[i].name + '</h1>';
+        data += '<h1>' + shoesFound[i].category + '</h1>';
+      
+        data += '</tr>';
+      }
+    
+      return nikeList.innerHTML = data;
+    }).catch(err => alert(err.message));
+  };

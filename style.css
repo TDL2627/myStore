@@ -332,30 +332,7 @@ header .container{
     padding: 1.6rem 0;
     text-align: center;
 }
-.add-to-cart-btn{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-    border: none;
-    padding: 0.75rem 1.2rem;
-    font-size: 1.05rem;
-    background-color: var(--baltic-sea);
-    color: #fff;
-    transition: var(--trans);
-    -webkit-transition: var(--trans);
-    -moz-transition: var(--trans);
-    -ms-transition: var(--trans);
-    -o-transition: var(--trans);
-    opacity: 0;
-}
-.nike-item:hover .add-to-cart-btn{
-    opacity: 1;
-}
+
 .add-to-cart-btn .fas{
     margin-right: 0.4rem;
 }
