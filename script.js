@@ -1,7 +1,6 @@
 
-// variables and constants
 const cartContainer = document.querySelector('.cart-container');
-const productList = document.querySelector('.product-list');
+const nikeList = document.querySelector('.nike-list');
 const cartList = document.querySelector('.cart-list');
 const cartTotalValue = document.getElementById('cart-total-value');
 const cartCountInfo = document.getElementById('cart-count-info');
@@ -26,44 +25,44 @@ function eventListeners(){
     });
 
     // add to cart
-    productList.addEventListener('click', purchaseProduct);
+    nikeList.addEventListener('click', purchasenike);
 
     // delete from cart
-    cartList.addEventListener('click', deleteProduct);
+    cartList.addEventListener('click', deletenike);
 }
 
 // update cart info
 function updateCartInfo(){
     let cartInfo = findCartInfo();
-    cartCountInfo.textContent = cartInfo.productCount;
+    cartCountInfo.textContent = cartInfo.nikeCount;
     cartTotalValue.textContent = cartInfo.total;
 }
 
-// load product items content form JSON file
+// load nike items content form JSON file
 function loadJSON(){
     fetch('stuff.json')
     .then(response => response.json())
     .then(data =>{
         let html = '';
-        data.forEach(product => {
+        data.forEach(nike => {
             html += `
-                <div class = "product-item">
-                    <div class = "product-img">
-                        <img src = "${product.pic}" alt = "product image">
+                <div class = "nike-item">
+                    <div class = "nike-img">
+                        <img src = "${nike.pic}" alt = "nike image">
                         <button type = "button" class = "add-to-cart-btn">
                             <i class = "fas fa-shopping-cart"></i>Add To Cart
                         </button>
                     </div>
 
-                    <div class = "product-content">
-                        <h3 class = "product-name">${product.name}</h3>
-                        <span class = "product-category">${product.category}</span>
-                        <p class = "product-price">$${product.price}</p>
+                    <div class = "nike-content">
+                        <h3 class = "nike-name">${nike.name}</h3>
+                        <span class = "nike-category">${nike.category}</span>
+                        <p class = "nike-price">R${nike.price}</p>
                     </div>
                 </div>
             `;
         });
-        productList.innerHTML = html;
+        nikeList.innerHTML = html;
     })
     .catch(error => {
         alert(`User live server or local server`);
@@ -72,39 +71,39 @@ function loadJSON(){
 }
 
 
-// purchase product
-function purchaseProduct(e){
+// purchase nike
+function purchasenike(e){
     if(e.target.classList.contains('add-to-cart-btn')){
-        let product = e.target.parentElement.parentElement;
-        getProductInfo(product);
+        let nike = e.target.parentElement.parentElement;
+        getnikeInfo(nike);
     }
 }
 
-// get product info after add to cart button click
-function getProductInfo(product){
-    let productInfo = {
+// get nike info after add to cart button click
+function getnikeInfo(nike){
+    let nikeInfo = {
         id: cartItemID,
-        pic: product.querySelector('.product-img img').src,
-        name: product.querySelector('.product-name').textContent,
-        category: product.querySelector('.product-category').textContent,
-        price: product.querySelector('.product-price').textContent
+        pic: nike.querySelector('.nike-img img').src,
+        name: nike.querySelector('.nike-name').textContent,
+        category: nike.querySelector('.nike-category').textContent,
+        price: nike.querySelector('.nike-price').textContent
     }
     cartItemID++;
-    addToCartList(productInfo);
-    saveProductInStorage(productInfo);
+    addToCartList(nikeInfo);
+    savenikeInStorage(nikeInfo);
 }
 
-// add the selected product to the cart list
-function addToCartList(product){
+// add the selected nike to the cart list
+function addToCartList(nike){
     const cartItem = document.createElement('div');
     cartItem.classList.add('cart-item');
-    cartItem.setAttribute('data-id', `${product.id}`);
+    cartItem.setAttribute('data-id', `${nike.id}`);
     cartItem.innerHTML = `
-        <img src = "${product.pic}" alt = "product image">
+        <img src = "${nike.pic}" alt = "nike image">
         <div class = "cart-item-info">
-            <h3 class = "cart-item-name">${product.name}</h3>
-            <span class = "cart-item-category">${product.category}</span>
-            <span class = "cart-item-price">${product.price}</span>
+            <h3 class = "cart-item-name">${nike.name}</h3>
+            <span class = "cart-item-category">${nike.category}</span>
+            <span class = "cart-item-price">${nike.price}</span>
         </div>
 
         <button type = "button" class = "cart-item-del-btn">
@@ -114,31 +113,31 @@ function addToCartList(product){
     cartList.appendChild(cartItem);
 }
 
-// save the product in the local storage
-function saveProductInStorage(item){
-    let products = getProductFromStorage();
-    products.push(item);
-    localStorage.setItem('products', JSON.stringify(products));
+// save the nike in the local storage
+function savenikeInStorage(item){
+    let nikes = getnikeFromStorage();
+    nikes.push(item);
+    localStorage.setItem('nikes', JSON.stringify(nikes));
     updateCartInfo();
 }
 
-// get all the products info if there is any in the local storage
-function getProductFromStorage(){
-    return localStorage.getItem('products') ? JSON.parse(localStorage.getItem('products')) : [];
-    // returns empty array if there isn't any product info
+// get all the nikes info if there is any in the local storage
+function getnikeFromStorage(){
+    return localStorage.getItem('nikes') ? JSON.parse(localStorage.getItem('nikes')) : [];
+    // returns empty array if there isn't any nike info
 }
 
-// load carts product
+// load carts nike
 function loadCart(){
-    let products = getProductFromStorage();
-    if(products.length < 1){
-        cartItemID = 1; // if there is no any product in the local storage
+    let nikes = getnikeFromStorage();
+    if(nikes.length < 1){
+        cartItemID = 1; // if there is no any nike in the local storage
     } else {
-        cartItemID = products[products.length - 1].id;
+        cartItemID = nikes[nikes.length - 1].id;
         cartItemID++;
-        // else get the id of the last product and increase it by 1
+        // else get the id of the last nike and increase it by 1
     }
-    products.forEach(product => addToCartList(product));
+    nikes.forEach(nike => addToCartList(nike));
 
     // calculate and update UI of cart info 
     updateCartInfo();
@@ -146,20 +145,20 @@ function loadCart(){
 
 // calculate total price of the cart and other info
 function findCartInfo(){
-    let products = getProductFromStorage();
-    let total = products.reduce((acc, product) => {
-        let price = parseFloat(product.price.substr(1)); // removing dollar sign
+    let nikes = getnikeFromStorage();
+    let total = nikes.reduce((acc, nike) => {
+        let price = parseFloat(nike.price.substr(1)); // removing dollar sign
         return acc += price;
     }, 0); // adding all the prices
 
     return{
         total: total.toFixed(2),
-        productCount: products.length
+        nikeCount: nikes.length
     }
 }
 
-// delete product from cart list and local storage
-function deleteProduct(e){
+// delete nike from cart list and local storage
+function deletenike(e){
     let cartItem;
     if(e.target.tagName === "BUTTON"){
         cartItem = e.target.parentElement;
@@ -169,10 +168,10 @@ function deleteProduct(e){
         cartItem.remove(); // this removes from the DOM only
     }
 
-    let products = getProductFromStorage();
-    let updatedProducts = products.filter(product => {
-        return product.id !== parseInt(cartItem.dataset.id);
+    let nikes = getnikeFromStorage();
+    let updatednikes = nikes.filter(nike => {
+        return nike.id !== parseInt(cartItem.dataset.id);
     });
-    localStorage.setItem('products', JSON.stringify(updatedProducts)); // updating the product list after the deletion
+    localStorage.setItem('nikes', JSON.stringify(updatednikes)); // updating the nike list after the deletion
     updateCartInfo();
 }

@@ -290,11 +290,11 @@ header .container{
     color: #fff;
 }
 
-/* products */
-.products{
+/* nikes */
+.nikes{
     padding: 6rem 0;
 }
-.products h2{
+.nikes h2{
     text-align: center;
     font-size: 2.2rem;
     text-transform: uppercase;
@@ -302,17 +302,17 @@ header .container{
     color: var(--granite-gray);
     margin-bottom: 3rem;
 }
-.product-item{
+.nike-item{
     margin: 1rem 0;
 }
-.product-img{
+.nike-img{
     background: var(--ghost-white);
     padding: 3rem 0;
     height: 350px;
     overflow: hidden;
     position: relative;
 }
-.product-img img{
+.nike-img img{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -329,10 +329,10 @@ header .container{
     -ms-transition: var(--trans);
     -o-transition: var(--trans);
 }
-.product-img:hover img{
+.nike-img:hover img{
     opacity: 0.8;
 }
-.product-content{
+.nike-content{
     padding: 1.6rem 0;
     text-align: center;
 }
@@ -357,7 +357,7 @@ header .container{
     -o-transition: var(--trans);
     opacity: 0;
 }
-.product-item:hover .add-to-cart-btn{
+.nike-item:hover .add-to-cart-btn{
     opacity: 1;
 }
 .add-to-cart-btn .fas{
@@ -369,11 +369,11 @@ header .container{
 .add-to-cart-btn:hover{
     color: var(--fire-bush);
 }
-.product-name{
+.nike-name{
     font-size: 1.3rem;
     color: var(--baltic-sea);
 }
-.product-category{
+.nike-category{
     margin:  0.8rem 0;
     display: inline-block;
     font-weight: 500;
@@ -387,7 +387,7 @@ header .container{
     -o-border-radius: 5px;
     letter-spacing: 2px;
 }
-.product-price{
+.nike-price{
     font-size: 1.15rem;
     font-weight: 500;
     opacity: 0.6;
@@ -469,7 +469,7 @@ footer > .container{
         left: auto;
         right: 3rem;
     }
-    .product-list{
+    .nike-list{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
@@ -492,7 +492,7 @@ footer > .container{
     .banner-content{
         text-align: left;
     }
-    .product-list{
+    .nike-list{
         grid-template-columns: repeat(3, 1fr);
     }
     .footer-banner{
@@ -516,7 +516,7 @@ footer > .container{
     .banner-content h1{
         font-size: 3.5rem;
     }
-    .product-list{
+    .nike-list{
         grid-template-columns: repeat(4, 1fr);
     }
 }
