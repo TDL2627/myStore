@@ -1,6 +1,7 @@
 .nike-item{
     width: 400px;
     height: 500px;
+    margin: 20px;
     border: 2px solid black;
 }
 .nike-pic{
@@ -10,6 +11,13 @@
 .cart{
     border: 2px solid black;
 }
+.cart-item{
+    margin: 25px;
+    border: solid 2px black;
+}
 #hide{
     display:none
+}
+body{
+    text-align: center;
 }
