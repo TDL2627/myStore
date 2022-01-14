@@ -48,7 +48,7 @@ function loadJSON(){
             html += `
                 <div class = "nike-item">
                     <div class = "nike-img">
-                        <img src = "${nike.pic}" alt = "nike image">
+                        <img class="nike-pic" src = "${nike.pic}" alt = "nike image">
                         <button type = "button" class = "add-to-cart-btn">
                             <i class = "fas fa-shopping-cart"></i>Add To Cart
                         </button>
@@ -99,7 +99,7 @@ function addToCartList(nike){
     cartItem.classList.add('cart-item');
     cartItem.setAttribute('data-id', `${nike.id}`);
     cartItem.innerHTML = `
-        <img src = "${nike.pic}" alt = "nike image">
+        <img class="nike-pic" src = "${nike.pic}" alt = "nike image">
         <div class = "cart-item-info">
             <h3 class = "cart-item-name">${nike.name}</h3>
             <span class = "cart-item-category">${nike.category}</span>
@@ -184,7 +184,7 @@ searchbar = () => {
         throw new Error('Nothing was entered in the search bar');
       }
       // Filter all the shoes in the array with value typed into the input field
-      let shoesFound = allshoes.filter(nike => nike.name.toLowerCase().includes(searchednike.toLowerCase()));
+      let shoesFound = allshoes.filter(nikes => nikes.name.toLowerCase().includes(searchednike.toLowerCase()));
       if(shoesFound.length === 0) {
         throw new Error('No shoes were found');
       }
@@ -200,3 +200,23 @@ searchbar = () => {
       return nikeList.innerHTML = data;
     }).catch(err => alert(err.message));
   };
+
+// //   sort by
+// // Sort: Sort shoes alphabetically
+// sortShoes = () => {
+//     nike.then(allshoes => {
+//       // Sorting alphabetically in decending order
+//       allshoes.sort((a, b) => {
+//         let fa = a.name.toLowerCase(),
+//         fb = b.name.toLowerCase();
+//         if (fa < fb) {
+//           return 1;
+//         }
+//         if (fa > fb) {
+//             return -1;
+//         }
+//         return 0;
+//       });
+//       loadJSON();
+//     }).catch(err => alert(err.message));
+//   }
