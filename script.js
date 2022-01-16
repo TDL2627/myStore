@@ -46,6 +46,7 @@ function loadJSON(){
         let html = '';
         data.forEach(nike => {
             html += `
+           
                 <div class = "nike-item">
                     <div class = "nike-img">
                         <img class="nike-pic" src = "${nike.pic}" alt = "nike image">
@@ -60,12 +61,13 @@ function loadJSON(){
                         <p class = "nike-price">R${nike.price}</p>
                     </div>
                 </div>
+                
             `;
         });
         nikeList.innerHTML = html;
     })
     .catch(error => {
-        alert(`A probleml with loading`);
+        alert(`There are currently no items`);
 
     })
 }
@@ -131,7 +133,8 @@ function getNikeFromStorage(){
 function loadCart(){
     let nikes = getNikeFromStorage();
     if(nikes.length < 1){
-        cartItemID = 1; // if there is no any nike in the local storage
+        cartItemID = 1;
+
     } else {
         cartItemID = nikes[nikes.length - 1].id;
         cartItemID++;
@@ -177,29 +180,29 @@ function deleteNike(e){
 }
 // search
 // Search: nike Search
-searchbar = () => {
-    var searchednike = document.getElementById('search').value.trim();
-    nike.then(allshoes => {
-      if (!searchednike) {
-        throw new Error('Nothing was entered in the search bar');
-      }
-      // Filter all the shoes in the array with value typed into the input field
-      let shoesFound = allshoes.filter(nikes => nikes.name.toLowerCase().includes(searchednike.toLowerCase()));
-      if(shoesFound.length === 0) {
-        throw new Error('No shoes were found');
-      }
-      var data = '';
-      for (i = 0; i < shoesFound.length; i++) {
+// searchbar = () => {
+//     var searchednike = document.getElementById('search').value.trim();
+//     nike.then(allshoes => {
+//       if (!searchednike) {
+//         throw new Error('Nothing was entered in the search bar');
+//       }
+//       // Filter all the shoes in the array with value typed into the input field
+//       let shoesFound = allshoes.filter(nikes => nikes.name.toLowerCase().includes(searchednike.toLowerCase()));
+//       if(shoesFound.length === 0) {
+//         throw new Error('No shoes were found');
+//       }
+//       var data = '';
+//       for (i = 0; i < shoesFound.length; i++) {
     
-        data += '<h1>' + shoesFound[i].name + '</h1>';
-        data += '<h1>' + shoesFound[i].category + '</h1>';
+//         data += '<h1>' + shoesFound[i].name + '</h1>';
+//         data += '<h1>' + shoesFound[i].category + '</h1>';
       
-        data += '</tr>';
-      }
+//         data += '</tr>';
+//       }
     
-      return nikeList.innerHTML = data;
-    }).catch(err => alert(err.message));
-  };
+//       return nikeList.innerHTML = data;
+//     }).catch(err => alert(err.message));
+//   };
 
 // //   sort by
 // // Sort: Sort shoes alphabetically

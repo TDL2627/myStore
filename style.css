@@ -3,6 +3,10 @@
     height: 500px;
     margin: 20px;
     border: 2px solid black;
+    flex: 1 0 21%; /* explanation below */
+    margin: 5px;
+    height: 300px;
+    text-align: center;
 }
 .nike-pic{
     width: 400px;
@@ -18,6 +22,20 @@
 #hide{
     display:none
 }
-body{
+body,html{
     text-align: center;
+}
+.nike-list{
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid red;
+}
+.cart-link{
+    text-decoration: none;
+    color: red;
+}
+.cart-link:hover{
+    text-decoration: none;
+    color: orange;
+    font-size: 20px;
 }
