@@ -2,15 +2,17 @@
     width: 400px;
     height: 350px !important;
     margin: 20px;
-    border: 2px solid black;
+    border: 3px solid black;
     flex: 1 0 21%; /* explanation below */
-    margin: 5px;
     height: 300px;
     text-align: center;
+   
 }
 .nike-content{
     background-color: rgb(168, 163, 163);
     border-top: black 2px solid;
+    height: 145px;
+
 }
 .nike-pic{
     width:250px;
@@ -31,6 +33,7 @@ body,html{
 }
 .nike-list{
     display: flex;
+    margin-bottom: 80px;
     flex-wrap: wrap;
 }
 .cart-link{
@@ -47,7 +50,13 @@ body,html{
    
 }
 /* footer */
-footer{}
+footer{
+    background-color: grey;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
 /* buttons */
 .add-to-cart-btn{
     color: green;
