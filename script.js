@@ -77,6 +77,7 @@ function purchaseNike(e){
     if(e.target.classList.contains('add-to-cart-btn')){
         let nike = e.target.parentElement.parentElement;
         getNikeInfo(nike);
+        alert("item added to cart")
     }
 }
 
@@ -165,10 +166,11 @@ function deleteNike(e){
     let cartItem;
     if(e.target.tagName === "BUTTON"){
         cartItem = e.target.parentElement;
-        cartItem.remove(); // this removes from the DOM only
+        cartItem.remove()
+        alert("item removed from cart"); 
     } else if(e.target.tagName === "I"){
         cartItem = e.target.parentElement.parentElement;
-        cartItem.remove(); // this removes from the DOM only
+        cartItem.remove(); 
     }
 
     let nikes = getNikeFromStorage();
