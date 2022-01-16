@@ -1,6 +1,6 @@
 .nike-item{
     width: 400px;
-    height: 500px;
+    height: 350px !important;
     margin: 20px;
     border: 2px solid black;
     flex: 1 0 21%; /* explanation below */
@@ -8,8 +8,12 @@
     height: 300px;
     text-align: center;
 }
+.nike-content{
+    background-color: rgb(168, 163, 163);
+    border-top: black 2px solid;
+}
 .nike-pic{
-    width: 400px;
+    width:250px;
     height: 200px;
 }
 .cart{
@@ -28,14 +32,48 @@ body,html{
 .nike-list{
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid red;
 }
 .cart-link{
     text-decoration: none;
-    color: red;
+    color: black;
+    border: green 2px solid;
+    border-radius: 25px;
+    padding: 5px;
 }
 .cart-link:hover{
     text-decoration: none;
-    color: orange;
-    font-size: 20px;
+    color: white;
+    background-color: green;
+   
+}
+/* footer */
+footer{}
+/* buttons */
+.add-to-cart-btn{
+    color: green;
+    border: green 2px solid;
+    border-radius: 25px;
+    margin: 5px;
+}
+.add-to-cart-btn:hover{
+    color: white;
+    border: green 2px solid;
+    border-radius: 25px;
+    background-color: green;
+}
+.cart-item-del-btn{
+    color: red;
+    border: red 2px solid;
+    border-radius: 25px; 
+    margin:25px;
+    font-size: 15px;
+}
+.cart-item-del-btn:hover{
+    color: white;
+    background-color: red;
+    border: red 2px solid;
+    border-radius: 25px; 
+    margin:25px;
+    font-size: 15px;
+    
 }

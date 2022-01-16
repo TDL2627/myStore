@@ -50,12 +50,11 @@ function loadJSON(){
                 <div class = "nike-item">
                     <div class = "nike-img">
                         <img class="nike-pic" src = "${nike.pic}" alt = "nike image">
-                        <button type = "button" class = "add-to-cart-btn">
-                            <i class = "fas fa-shopping-cart"></i>Add To Cart
-                        </button>
                     </div>
-
                     <div class = "nike-content">
+                    <button type = "button" class = "add-to-cart-btn">
+                    <i style="margin-right:10px;" class = "fas fa-shopping-cart"></i>Add To Cart
+               </button>
                         <h3 class = "nike-name">${nike.name}</h3>
                         <span class = "nike-category">${nike.category}</span>
                         <p class = "nike-price">R${nike.price}</p>
@@ -107,10 +106,11 @@ function addToCartList(nike){
             <span class = "cart-item-category">${nike.category}</span>
             <span class = "cart-item-price">${nike.price}</span>
         </div>
-
         <button type = "button" class = "cart-item-del-btn">
-          delete
-        </button>
+        delete
+      </button>
+
+     
     `;
     cartList.appendChild(cartItem);
 }
