@@ -18,9 +18,7 @@
     width:250px;
     height: 200px;
 }
-.cart{
 
-}
 .cart-item{
     margin: 25px;
     border: solid 2px black;
@@ -42,6 +40,10 @@ body,html{
     border: green 2px solid;
     border-radius: 25px;
     padding: 5px;
+    position: fixed;
+top: 0;
+right: 20px;
+    margin-top: 10px;
 }
 .cart-link:hover{
     text-decoration: none;
@@ -58,6 +60,7 @@ footer{
     bottom: 0;
     left: 0;
 }
+
 /* buttons */
 .add-to-cart-btn{
     color: green;

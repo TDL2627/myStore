@@ -225,3 +225,46 @@ function deleteNike(e){
 //       loadJSON();
 //     }).catch(err => alert(err.message));
 //   }
+
+// sort by price
+
+sortPrice = () => {
+    // Sorting alphabetically in decending order
+     nike.sort((a, b) => {
+      let fa = a.price,
+      fb = b.price;
+      if (fa < fb) {
+        return -1;
+      }
+      if (fa > fb) {
+          return 1;
+      }
+      return 0;
+      
+    });
+    loadJSON();
+  }
+
+
+    // filter
+    function filterCards(category) {
+        let cards = document.getElementsByClassName("project-card");
+      
+        if (category === "All") {
+          for (card of cards) {
+            card.style.display = "block";
+          }
+          return;
+        }
+      
+        for (card of cards) {
+          console.log(card);
+          card.style.display = "none";
+        }
+      
+        let selectedCards = document.querySelectorAll(`[genre='${category}']`);
+      
+        for (card of selectedCards) {
+          card.style.display = "block";
+        }
+      }
